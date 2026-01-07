@@ -1,0 +1,32 @@
+# ===== OS =====
+.DS_Store
+Thumbs.db
+
+# ===== Visual Studio =====
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# ===== Build output =====
+bin/
+obj/
+out/
+
+# ===== Logs =====
+*.log
+
+# ===== NuGet =====
+packages/
+
+# ===== Rider / IntelliJ =====
+.idea/
+
+# ===== Node (if exists) =====
+node_modules/
+dist/
+
+# ===== Temp =====
+*.tmp
+*.temp
