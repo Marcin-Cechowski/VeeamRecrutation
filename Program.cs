@@ -26,7 +26,6 @@ namespace FolderSync
             Log.Logger = new LoggerConfiguration()
                 .MinimumLevel.Information()
                 .WriteTo.Console()
-                .WriteTo.File(options.LogPath, rollingInterval: RollingInterval.Day, shared: true)
                 .CreateLogger();
 
             try

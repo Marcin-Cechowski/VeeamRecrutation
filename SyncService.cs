@@ -17,7 +17,10 @@ namespace FolderSync
 
         public Task SynchronizeAsync(CancellationToken token)
         {
-            ValidatePaths();
+            if (!Directory.Exists(_options.SourcePath))
+                throw new DirectoryNotFoundException("Source folder not found: " + _options.SourcePath);
+
+            Directory.CreateDirectory(_options.ReplicaPath);
 
             _logger.LogInformation($"Synchronization started. Source: {_options.SourcePath} Replica: {_options.ReplicaPath}");
 
@@ -26,14 +29,6 @@ namespace FolderSync
 
             _logger.LogInformation("Synchronization finished.");
             return Task.CompletedTask;
-        }
-
-        private void ValidatePaths()
-        {
-            if (!Directory.Exists(_options.SourcePath))
-                throw new DirectoryNotFoundException("Source folder not found: " + _options.SourcePath);
-
-            Directory.CreateDirectory(_options.ReplicaPath);
         }
 
         private void SyncDirectory(string sourceDir, string replicaDir, CancellationToken token)
