@@ -1,13 +1,5 @@
 # Folder Synchronization Tool
 
-This project is a simple **folder synchronization tool** written in **C# (.NET)**.
-
-Its purpose is to **keep one folder (replica) in sync with another folder (source)**:
-- new files are copied
-- changed files are updated
-- removed files are deleted from the replica
-
-
 ## How to Run from Command Line
 
 You can also run the application from a terminal:
